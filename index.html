@@ -5,6 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>Fox View Dental | Cosmetic &amp; Restorative Dentistry | De Pere, WI</title>
+  <meta name="description" content="Fox View Dental | Cosmetic &amp; Restorative Dentistry | De Pere, WI. See our services, photos, and how to get in touch.">
+  <meta property="og:title" content="Fox View Dental | Cosmetic &amp; Restorative Dentistry | De Pere, WI">
+  <meta property="og:description" content="Fox View Dental | Cosmetic &amp; Restorative Dentistry | De Pere, WI">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andrei170.github.io/fox-view-dental-site/">
+  <meta property="og:image" content="https://foxviewdental.com/wp-content/uploads/2024/02/Image20240221104204-2-copy-scaled.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://foxviewdental.com/wp-content/uploads/2024/02/Image20240221104204-2-copy-scaled.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='%230f172a'/><text x='32' y='44' font-size='38' font-family='Georgia,serif' fill='%23ffffff' text-anchor='middle'>F</text></svg>">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -162,34 +172,59 @@ nav a:hover { color: var(--gold) !important; }
 .nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
 
 /* =============================================
-   HERO
+   HERO -- cinematic 100vh with Ken Burns
    ============================================= */
 .hero {
   position: relative;
-  min-height: 100svh;
+  height: 100vh;
+  min-height: 600px;
   display: flex;
   align-items: center;
   overflow: hidden;
   background: var(--navy);
 }
+
+/* Ken-Burns layer: scale 1.0 -> 1.08, very slow */
 .hero-bg {
   position: absolute;
-  inset: 0;
+  inset: -6%;           /* bleed so scale never shows edges */
   background-image: url('https://foxviewdental.com/wp-content/uploads/2024/02/Image20240221104204-2-copy-scaled.jpg');
   background-size: cover;
   background-position: center 30%;
-  opacity: 0.32;
+  will-change: transform;
 }
+@media (prefers-reduced-motion: no-preference) {
+  .hero-bg { animation: kenBurns 22s ease-in-out infinite alternate; }
+}
+@keyframes kenBurns {
+  from { transform: scale(1.0) translateX(0); }
+  to   { transform: scale(1.08) translateX(-1%); }
+}
+
+/* Cinematic scrim: strong bottom-up gradient so text is always legible */
 .hero-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    135deg,
-    rgba(20,35,63,0.92) 0%,
-    rgba(20,35,63,0.72) 50%,
-    rgba(20,35,63,0.55) 100%
+    to top,
+    rgba(20,35,63,0.96) 0%,
+    rgba(20,35,63,0.75) 38%,
+    rgba(20,35,63,0.48) 65%,
+    rgba(20,35,63,0.28) 100%
   );
 }
+/* Secondary left-edge vignette for text contrast */
+.hero-overlay::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(20,35,63,0.60) 0%,
+    transparent 60%
+  );
+}
+
 .hero-content {
   position: relative;
   z-index: 2;
@@ -367,6 +402,90 @@ nav a:hover { color: var(--gold) !important; }
 }
 
 /* =============================================
+   FEATURE BAND -- full-bleed ~65vh with caption
+   ============================================= */
+.feature-band {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: clamp(360px, 65vh, 720px);
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  background: var(--navy);
+}
+.feature-band-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  display: block;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .feature-band-photo { animation: kenBurnsSubtle 26s ease-in-out infinite alternate; }
+}
+@keyframes kenBurnsSubtle {
+  from { transform: scale(1.0); }
+  to   { transform: scale(1.05) translateY(-1%); }
+}
+.feature-band-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(20,35,63,0.90) 0%,
+    rgba(20,35,63,0.55) 40%,
+    rgba(20,35,63,0.15) 75%,
+    transparent 100%
+  );
+}
+.feature-band-caption {
+  position: relative;
+  z-index: 2;
+  padding: 48px 5vw 44px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.feature-band-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 600;
+  color: var(--ivory);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.feature-band-text p {
+  font-size: 16px;
+  color: rgba(253,250,246,0.72);
+  max-width: 480px;
+  line-height: 1.6;
+}
+.feature-band-tag {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  background: rgba(20,35,63,0.55);
+  border: 1px solid rgba(184,150,90,0.35);
+  padding: 8px 18px;
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* =============================================
    DOCTOR BIO
    ============================================= */
 .bio-grid {
@@ -472,14 +591,14 @@ nav a:hover { color: var(--gold) !important; }
 .gh-badge-text strong { color: var(--navy); display: block; font-weight: 600; margin-bottom: 1px; }
 
 /* =============================================
-   SMILE GALLERY
+   SMILE GALLERY -- enlarged + lightbox hover
    ============================================= */
 .gallery-intro { text-align: center; max-width: 560px; margin: 0 auto 56px; }
 .gallery-intro h2 { color: var(--navy); margin-bottom: 14px; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 24px;
 }
 .gallery-card {
   background: var(--white);
@@ -490,10 +609,11 @@ nav a:hover { color: var(--gold) !important; }
   transition: transform var(--transition), box-shadow var(--transition);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .gallery-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .gallery-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
 }
+/* Enlarged: was 220px, now 280px */
 .gallery-visual {
-  height: 220px;
+  height: 280px;
   background: linear-gradient(145deg, var(--rose-pale), var(--ivory-deep));
   display: flex;
   align-items: center;
@@ -509,10 +629,12 @@ nav a:hover { color: var(--gold) !important; }
   display: block;
 }
 .gallery-visual svg { opacity: 0.4; }
+
+/* Before/After grid -- enlarged to 280px */
 .gallery-ba {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  height: 220px;
+  height: 280px;
   position: relative;
   overflow: hidden;
   background: var(--ivory-deep);
@@ -527,19 +649,36 @@ nav a:hover { color: var(--gold) !important; }
   object-fit: cover;
   object-position: center top;
   display: block;
+  transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+}
+/* Lightbox hover effect on each BA column */
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-card:hover .gallery-ba-col img { transform: scale(1.04); }
+}
+/* Hover overlay reveal */
+.gallery-ba-col::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20,35,63,0);
+  transition: background 0.35s ease;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-card:hover .gallery-ba-col::after { background: rgba(20,35,63,0.08); }
 }
 .gallery-ba-tag {
   position: absolute;
-  bottom: 8px;
-  left: 8px;
-  background: rgba(20,35,63,0.78);
+  bottom: 10px;
+  left: 10px;
+  background: rgba(20,35,63,0.80);
   color: var(--ivory);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 3px 8px;
+  padding: 4px 10px;
   border-radius: 4px;
+  z-index: 2;
 }
 .gallery-ba-divider {
   position: absolute;
@@ -551,16 +690,35 @@ nav a:hover { color: var(--gold) !important; }
   transform: translateX(-50%);
 }
 .gallery-label {
-  padding: 20px 22px;
+  padding: 22px 24px;
 }
 .gallery-treatment {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 19px;
+  font-size: 21px;
   font-weight: 600;
   color: var(--navy);
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
 .gallery-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+/* Single-photo gallery visual -- same lightbox zoom */
+.gallery-visual-wrap {
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(145deg, var(--rose-pale), var(--ivory-deep));
+}
+.gallery-visual-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-card:hover .gallery-visual-wrap img { transform: scale(1.05); }
+}
 
 /* =============================================
    OFFICE PHOTO BAND
@@ -573,7 +731,7 @@ nav a:hover { color: var(--gold) !important; }
 .office-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  height: 280px;
+  height: 300px;
 }
 .office-strip-item {
   position: relative;
@@ -586,7 +744,9 @@ nav a:hover { color: var(--gold) !important; }
   display: block;
   transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
 }
-.office-strip-item:hover img { transform: scale(1.04); }
+@media (prefers-reduced-motion: no-preference) {
+  .office-strip-item:hover img { transform: scale(1.06); }
+}
 .office-strip-caption {
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -596,10 +756,10 @@ nav a:hover { color: var(--gold) !important; }
   font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 18px 14px 12px;
+  padding: 20px 14px 13px;
 }
 @media (max-width: 780px) {
-  .office-strip { grid-template-columns: repeat(2, 1fr); height: 340px; }
+  .office-strip { grid-template-columns: repeat(2, 1fr); height: 360px; }
 }
 
 /* =============================================
@@ -891,6 +1051,7 @@ footer.site {
   .trust-num { font-size: 28px; }
   .foot-inner { grid-template-columns: 1fr; gap: 28px; }
   .foot-bottom { flex-direction: column; align-items: flex-start; }
+  .feature-band-caption { flex-direction: column; align-items: flex-start; gap: 16px; }
 }
 </style>
 </head>
@@ -927,7 +1088,7 @@ footer.site {
 </header>
 
 <!-- =============================================
-     HERO
+     HERO -- cinematic 100vh, Ken Burns, scrim
      ============================================= -->
 <section class="hero" id="home" aria-label="Hero">
   <div class="hero-bg" role="presentation" aria-hidden="true"></div>
@@ -974,7 +1135,6 @@ footer.site {
      ============================================= -->
 <div class="trust-band" aria-hidden="true">
   <div class="marquee-track">
-    <!-- Two copies for continuous loop -->
     <span class="marquee-item"><span class="marquee-dot"></span>Clinical Mastery Series Faculty</span>
     <span class="marquee-item"><span class="marquee-dot"></span>Good Housekeeping Featured</span>
     <span class="marquee-item"><span class="marquee-dot"></span>Digital Smile Design</span>
@@ -1067,6 +1227,27 @@ footer.site {
     </div>
   </div>
 </section>
+
+<!-- =============================================
+     FEATURE BAND -- full-bleed 100vw, ~65vh
+     Front Desk photo with cinematic scrim + caption
+     ============================================= -->
+<div class="feature-band reveal" role="img" aria-label="Fox View Dental front desk and reception area">
+  <img
+    class="feature-band-photo"
+    src="https://foxviewdental.com/wp-content/uploads/2023/07/Front-Desk.jpg"
+    alt="The welcoming front desk at Fox View Dental in De Pere, WI"
+    loading="lazy"
+  >
+  <div class="feature-band-scrim" aria-hidden="true"></div>
+  <div class="feature-band-caption">
+    <div class="feature-band-text">
+      <h2>Where every visit begins with a warm welcome.</h2>
+      <p>Our front desk team has been with the practice for an average of over 20 years. You are never starting over here.</p>
+    </div>
+    <span class="feature-band-tag">De Pere, WI</span>
+  </div>
+</div>
 
 <!-- =============================================
      DOCTOR BIO
@@ -1348,6 +1529,21 @@ footer.site {
         </div>
       </div>
 
+      <!-- NEW: 7th gallery card using newly verified After-Veneers photo -->
+      <div class="gallery-card reveal reveal-delay-1" style="grid-column: 1 / -1; max-width: 480px; margin: 0 auto;">
+        <div class="gallery-visual-wrap">
+          <img
+            src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_After-Veneers.jpg"
+            alt="Completed porcelain veneer result at Fox View Dental"
+            loading="lazy"
+          >
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">Veneer Result Close-Up</div>
+          <p class="gallery-desc">Single-arch cosmetic case. Natural translucency achieved through Digital Smile Design planning and custom porcelain shade selection.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -1532,7 +1728,7 @@ footer.site {
         <div style="margin-top: 28px; background: var(--ivory-warm); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 28px;">
           <span class="eyebrow" style="margin-bottom: 10px;">The Team Behind the Smile</span>
           <p style="font-size: 14.5px; color: var(--ink-mid); line-height: 1.65; margin-bottom: 18px;">Fox View Dental's team members average over 20 years at the practice. Char, Brenda, Lisa, Rachel, Lorie, and Chloe bring a depth of care and continuity that most offices simply cannot match. When you come in, you are not starting over.</p>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px;">
             <div style="border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: var(--ivory-deep);">
               <img
                 src="https://foxviewdental.com/wp-content/uploads/2023/07/fox-view-dental-team.jpg"
@@ -1545,6 +1741,14 @@ footer.site {
               <img
                 src="https://foxviewdental.com/wp-content/uploads/2023/07/Brenda-with-a-Patient.jpg"
                 alt="Brenda, hygienist at Fox View Dental, with a patient"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+              >
+            </div>
+            <div style="border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: var(--ivory-deep);">
+              <img
+                src="https://foxviewdental.com/wp-content/uploads/2023/07/Rachel.jpg"
+                alt="Rachel, team member at Fox View Dental"
                 loading="lazy"
                 style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
               >
