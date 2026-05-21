@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>Fox View Dental | Cosmetic &amp; Restorative Dentistry | De Pere, WI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   CSS VARIABLES
+   ============================================= */
+:root {
+  --ivory:       #fdfaf6;
+  --ivory-warm:  #f7f1e8;
+  --ivory-deep:  #ede6d8;
+  --navy:        #14233f;
+  --navy-mid:    #1e3358;
+  --navy-soft:   #2a4570;
+  --rose:        #c9978e;
+  --rose-light:  #e8cbc7;
+  --rose-pale:   #f5e9e6;
+  --gold:        #b8965a;
+  --gold-light:  #d4b07a;
+  --ink:         #1a2438;
+  --ink-mid:     #3d4a5c;
+  --ink-soft:    #5e6d80;
+  --line:        #ddd6c8;
+  --white:       #ffffff;
+  --shadow-sm:   0 2px 8px rgba(20,35,63,0.07);
+  --shadow-md:   0 8px 24px rgba(20,35,63,0.10);
+  --shadow-lg:   0 18px 48px rgba(20,35,63,0.13);
+  --radius-sm:   8px;
+  --radius-md:   14px;
+  --radius-lg:   24px;
+  --transition:  0.28s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* =============================================
+   RESET + BASE
+   ============================================= */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--ivory);
+  color: var(--ink);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* =============================================
+   LAYOUT
+   ============================================= */
+.container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+.container--narrow { max-width: 840px; margin: 0 auto; padding: 0 28px; }
+
+section.block { padding: 96px 0; }
+section.block.alt { background: var(--ivory-warm); }
+section.block.dark { background: var(--navy); }
+
+/* =============================================
+   TYPOGRAPHY
+   ============================================= */
+.display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+h1.display { font-size: clamp(42px, 6vw, 76px); }
+h2.display { font-size: clamp(32px, 4vw, 52px); }
+h3.display { font-size: clamp(22px, 2.8vw, 32px); }
+
+.eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 16px;
+}
+.lede {
+  font-size: 18px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  max-width: 640px;
+}
+p { color: var(--ink-soft); line-height: 1.7; }
+
+/* =============================================
+   HEADER / NAV
+   ============================================= */
+.site-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  transition: background var(--transition), box-shadow var(--transition), padding var(--transition);
+  padding: 22px 0;
+}
+.site-header.scrolled {
+  background: rgba(253,250,246,0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 0 var(--line), var(--shadow-sm);
+  padding: 14px 0;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.nav-logo {
+  height: 36px;
+  width: auto;
+}
+.nav-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.01em;
+  transition: color var(--transition);
+}
+.site-header:not(.scrolled) .nav-name { color: var(--ivory); }
+.site-header:not(.scrolled) .nav-logo { filter: brightness(0) invert(1); }
+nav ul { list-style: none; display: flex; align-items: center; gap: 32px; }
+nav a {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: rgba(253,250,246,0.85);
+  transition: color var(--transition);
+  letter-spacing: 0.01em;
+}
+.site-header.scrolled nav a { color: var(--ink-mid); }
+nav a:hover { color: var(--gold) !important; }
+.nav-cta {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--white) !important;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), transform var(--transition);
+}
+.nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--navy);
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://foxviewdental.com/wp-content/uploads/2024/02/Image20240221104204-2-copy-scaled.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.32;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(20,35,63,0.92) 0%,
+    rgba(20,35,63,0.72) 50%,
+    rgba(20,35,63,0.55) 100%
+  );
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 140px 0 100px;
+  max-width: 780px;
+}
+.hero h1 { color: var(--ivory); margin-bottom: 24px; }
+.hero h1 em {
+  font-style: italic;
+  color: var(--rose-light);
+}
+.hero-desc {
+  font-size: 19px;
+  color: rgba(253,250,246,0.82);
+  line-height: 1.65;
+  max-width: 580px;
+  margin-bottom: 44px;
+}
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--white);
+  padding: 16px 32px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 4px 18px rgba(184,150,90,0.40);
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(184,150,90,0.45); }
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(253,250,246,0.9);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(253,250,246,0.35);
+  transition: color var(--transition), border-color var(--transition);
+}
+.btn-ghost:hover { color: var(--rose-light); border-color: var(--rose-light); }
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  flex-wrap: wrap;
+}
+.trust-item { display: flex; flex-direction: column; gap: 4px; }
+.trust-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--rose-light);
+  line-height: 1;
+}
+.trust-label {
+  font-size: 12px;
+  color: rgba(253,250,246,0.65);
+  font-weight: 500;
+  max-width: 140px;
+  line-height: 1.4;
+}
+
+/* =============================================
+   MARQUEE TRUST BAND
+   ============================================= */
+.trust-band {
+  background: var(--gold);
+  padding: 14px 0;
+  overflow: hidden;
+  position: relative;
+}
+.marquee-track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .marquee-track { animation: marquee 28s linear infinite; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 36px;
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  flex-shrink: 0;
+}
+.marquee-dot {
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  flex-shrink: 0;
+}
+
+/* =============================================
+   SERVICES
+   ============================================= */
+.section-intro { max-width: 640px; margin-bottom: 60px; }
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.svc-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 36px 28px;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.svc-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--rose));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .svc-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: transparent; }
+  .svc-card:hover::before { opacity: 1; }
+}
+.svc-icon {
+  width: 48px; height: 48px;
+  background: var(--rose-pale);
+  color: var(--rose);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 22px;
+}
+.svc-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.svc-card p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; margin-bottom: 18px; }
+.svc-tag {
+  display: inline-block;
+  background: var(--ivory-warm);
+  color: var(--navy-mid);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 999px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* =============================================
+   DOCTOR BIO
+   ============================================= */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.bio-photo-wrap {
+  position: sticky;
+  top: 110px;
+}
+.bio-photo {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: linear-gradient(155deg, var(--rose-pale) 0%, var(--rose-light) 100%);
+  aspect-ratio: 4/5;
+}
+.bio-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.bio-photo-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(20,35,63,0.85) 0%, transparent 60%);
+  padding: 32px 28px 28px;
+  color: var(--ivory);
+}
+.bio-photo-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.bio-photo-title { font-size: 13px; color: rgba(253,250,246,0.75); letter-spacing: 0.04em; }
+.bio-badge {
+  position: absolute;
+  top: 22px; right: 22px;
+  width: 64px; height: 64px;
+  background: var(--gold);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+  box-shadow: var(--shadow-md);
+}
+.bio-body .eyebrow { margin-bottom: 12px; }
+.bio-body h2 { color: var(--navy); margin-bottom: 20px; }
+.bio-body p { font-size: 16px; margin-bottom: 16px; }
+.bio-body p:first-of-type { font-size: 18px; color: var(--ink-mid); font-weight: 400; }
+.cred-list {
+  list-style: none;
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+}
+.cred-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+.cred-bullet {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+.cred-item-text { font-size: 15px; color: var(--ink-mid); line-height: 1.5; }
+.cred-item-text strong { color: var(--navy); font-weight: 600; }
+.gh-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--ivory-warm);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px;
+  margin-top: 28px;
+}
+.gh-badge-icon {
+  width: 36px; height: 36px;
+  background: var(--navy);
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  color: var(--rose-light);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.gh-badge-text { font-size: 13.5px; color: var(--ink-mid); line-height: 1.45; }
+.gh-badge-text strong { color: var(--navy); display: block; font-weight: 600; margin-bottom: 1px; }
+
+/* =============================================
+   SMILE GALLERY
+   ============================================= */
+.gallery-intro { text-align: center; max-width: 560px; margin: 0 auto 56px; }
+.gallery-intro h2 { color: var(--navy); margin-bottom: 14px; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gallery-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--line);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gallery-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+}
+.gallery-visual {
+  height: 180px;
+  background: linear-gradient(145deg, var(--rose-pale), var(--ivory-deep));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.gallery-visual svg { opacity: 0.4; }
+.gallery-label {
+  padding: 20px 22px;
+}
+.gallery-treatment {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.gallery-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+/* =============================================
+   SOCIAL PROOF
+   ============================================= */
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.proof-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 34px 28px;
+  position: relative;
+  transition: box-shadow var(--transition);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .proof-card:hover { box-shadow: var(--shadow-md); }
+}
+.proof-quote-mark {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--rose-light);
+  line-height: 0.7;
+  margin-bottom: 18px;
+  display: block;
+}
+.proof-text {
+  font-size: 15px;
+  color: var(--ink-mid);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+.proof-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.proof-avatar {
+  width: 40px; height: 40px;
+  background: var(--rose-pale);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--rose);
+  flex-shrink: 0;
+}
+.proof-name { font-size: 13.5px; font-weight: 600; color: var(--navy); }
+.proof-meta { font-size: 12px; color: var(--ink-soft); margin-top: 2px; }
+.stars {
+  color: var(--gold);
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* =============================================
+   CONTACT + HOURS
+   ============================================= */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.contact-info h2 { color: var(--navy); margin-bottom: 10px; }
+.contact-info .lede { margin-bottom: 40px; }
+.contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-bottom: 36px;
+}
+.contact-row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+.contact-icon {
+  width: 40px; height: 40px;
+  background: var(--rose-pale);
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: var(--rose);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.contact-detail { font-size: 15px; color: var(--ink-mid); line-height: 1.55; }
+.contact-detail strong { color: var(--navy); font-weight: 600; display: block; font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 3px; }
+.hours-table {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.hours-head {
+  background: var(--navy);
+  color: var(--ivory);
+  padding: 18px 24px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--line);
+  font-size: 14.5px;
+}
+.hours-row:last-child { border-bottom: none; }
+.hours-day { font-weight: 500; color: var(--navy); }
+.hours-time { color: var(--ink-soft); }
+.hours-time.closed { color: var(--rose); font-weight: 500; }
+.cta-block {
+  margin-top: 32px;
+  padding: 32px;
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  color: var(--ivory);
+}
+.cta-block p {
+  color: rgba(253,250,246,0.78);
+  font-size: 15px;
+  margin-bottom: 22px;
+  line-height: 1.6;
+}
+.cta-block .btn-primary { width: 100%; justify-content: center; }
+
+/* =============================================
+   BOOKING STRIP
+   ============================================= */
+.booking-strip {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  padding: 72px 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.booking-strip::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(201,151,142,0.15), transparent 70%);
+  border-radius: 50%;
+}
+.booking-strip::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(184,150,90,0.12), transparent 70%);
+  border-radius: 50%;
+}
+.booking-inner { position: relative; z-index: 1; }
+.booking-strip h2 { color: var(--ivory); margin-bottom: 14px; }
+.booking-strip p { color: rgba(253,250,246,0.75); max-width: 520px; margin: 0 auto 36px; font-size: 17px; }
+.booking-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(253,250,246,0.85);
+  font-size: 15px;
+  font-weight: 500;
+  padding: 16px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(253,250,246,0.30);
+  transition: border-color var(--transition), color var(--transition);
+}
+.btn-outline:hover { border-color: var(--rose-light); color: var(--rose-light); }
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer.site {
+  background: var(--navy);
+  color: rgba(253,250,246,0.65);
+  padding: 56px 0 28px;
+  font-size: 13.5px;
+}
+.foot-inner {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.foot-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.foot-logo { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: 0.8; }
+.foot-brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--ivory);
+}
+.foot-desc { font-size: 13.5px; line-height: 1.65; max-width: 280px; color: rgba(253,250,246,0.55); }
+.foot-col h4 {
+  color: var(--ivory);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+.foot-col ul { list-style: none; }
+.foot-col li { margin-bottom: 10px; }
+.foot-col a { color: rgba(253,250,246,0.6); font-size: 13.5px; transition: color var(--transition); }
+.foot-col a:hover { color: var(--gold-light); }
+.foot-col p { font-size: 13.5px; line-height: 1.7; color: rgba(253,250,246,0.6); }
+.foot-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-size: 12.5px;
+}
+.foot-demo {
+  color: rgba(253,250,246,0.45);
+}
+.foot-demo a { color: var(--gold-light); transition: color var(--transition); }
+.foot-demo a:hover { color: var(--gold); }
+
+/* =============================================
+   SCROLL REVEAL
+   ============================================= */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.65s cubic-bezier(0.4,0,0.2,1), transform 0.65s cubic-bezier(0.4,0,0.2,1);
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 1040px) {
+  .bio-grid { grid-template-columns: 320px 1fr; gap: 52px; }
+  .svc-grid { grid-template-columns: repeat(2, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .proof-grid { grid-template-columns: repeat(2, 1fr); }
+  .foot-inner { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 780px) {
+  section.block { padding: 64px 0; }
+  .bio-grid { grid-template-columns: 1fr; }
+  .bio-photo-wrap { position: static; max-width: 320px; }
+  .svc-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+  nav ul { display: none; }
+  .hero-trust { gap: 20px; }
+  .trust-item { flex-direction: row; align-items: baseline; gap: 8px; }
+  .trust-num { font-size: 28px; }
+  .foot-inner { grid-template-columns: 1fr; gap: 28px; }
+  .foot-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<!-- =============================================
+     HEADER
+     ============================================= -->
+<header class="site-header" id="site-header">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand" aria-label="Fox View Dental home">
+        <img
+          src="https://foxviewdental.com/wp-content/uploads/2017/12/logo-1024x358.png"
+          alt="Fox View Dental"
+          class="nav-logo"
+          width="120"
+          height="42"
+        >
+        <span class="nav-name">Fox View Dental</span>
+      </a>
+      <nav aria-label="Primary navigation">
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#doctor">Dr. Yenchesky</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="https://andrei170.github.io/ag1/#services" class="nav-cta" target="_blank" rel="noopener">Book Appointment</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- =============================================
+     HERO
+     ============================================= -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="hero-bg" role="presentation" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow">De Pere, Wisconsin</span>
+      <h1 class="display">Your smile, <em>crafted</em> by the dentist who teaches dentists.</h1>
+      <p class="hero-desc">Dr. Chad Yenchesky has spent 17 years on national faculty training other clinicians in cosmetic dentistry. That expertise comes home to every patient at Fox View Dental.</p>
+      <div class="hero-actions">
+        <a href="https://andrei170.github.io/ag1/#services" class="btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Schedule a Visit
+        </a>
+        <a href="tel:9203364201" class="btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 9.73a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 2.91h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17h1z"/></svg>
+          (920) 336-4201
+        </a>
+      </div>
+      <div class="hero-trust" aria-label="Practice highlights">
+        <div class="trust-item">
+          <span class="trust-num">17</span>
+          <span class="trust-label">Years National Faculty</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">100</span>
+          <span class="trust-label">CE Hours Per Year</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">35+</span>
+          <span class="trust-label">Years Staff Tenure</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-num">2010</span>
+          <span class="trust-label">Sole Owner</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TRUST MARQUEE
+     ============================================= -->
+<div class="trust-band" aria-hidden="true">
+  <div class="marquee-track">
+    <!-- Two copies for continuous loop -->
+    <span class="marquee-item"><span class="marquee-dot"></span>Clinical Mastery Series Faculty</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Good Housekeeping Featured</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Digital Smile Design</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Porcelain Veneers</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>AAFE Botox &amp; Filler</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Invisalign</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Implant Dentistry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Sedation Dentistry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Arizona School of Dentistry Adjunct 2010-13</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>University of Minnesota DDS 2002</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Clinical Mastery Series Faculty</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Good Housekeeping Featured</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Digital Smile Design</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Porcelain Veneers</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>AAFE Botox &amp; Filler</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Invisalign</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Implant Dentistry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Sedation Dentistry</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Arizona School of Dentistry Adjunct 2010-13</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>University of Minnesota DDS 2002</span>
+  </div>
+</div>
+
+<!-- =============================================
+     SERVICES
+     ============================================= -->
+<section class="block" id="services" aria-labelledby="svc-heading">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="eyebrow">What We Offer</span>
+      <h2 class="display" id="svc-heading">Every service backed by 20 years of mastery.</h2>
+      <p class="lede">From a single veneer to a full smile transformation, every case is treated with the precision Dr. Yenchesky teaches on the national stage.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>Digital Smile Design</h3>
+        <p>Using photography, video, and digital planning, Dr. Yenchesky designs your new smile before a single tooth is touched. This is the protocol he teaches other dentists through the Clinical Mastery Series Art of Photography curriculum.</p>
+        <span class="svc-tag">Signature Service</span>
+      </div>
+
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Porcelain Veneers</h3>
+        <p>Ultra-thin, custom-crafted porcelain shells that reshape your smile permanently. Anterior Aesthetics is one of three subjects Dr. Yenchesky teaches at Clinical Mastery. You get that faculty-level craft applied directly to your case.</p>
+        <span class="svc-tag">Cosmetic</span>
+      </div>
+
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3>Botox &amp; Dermal Filler</h3>
+        <p>AAFE-trained dental-aesthetic and therapeutic Botox and dermal filler. A service available from very few general dentists in the Green Bay metro, integrated with your cosmetic treatment plan for a harmonious result.</p>
+        <span class="svc-tag">Facial Aesthetics</span>
+      </div>
+
+      <div class="svc-card reveal reveal-delay-1">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Invisalign Clear Aligners</h3>
+        <p>Discreet orthodontic correction without metal brackets. Pairs directly with veneer and cosmetic treatment planning so your final result is planned as one cohesive case from day one.</p>
+        <span class="svc-tag">Orthodontics</span>
+      </div>
+
+      <div class="svc-card reveal reveal-delay-2">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Dental Implants</h3>
+        <p>Single-tooth implants and All-on-X full-arch restoration. A permanent solution that looks, functions, and feels like your natural teeth. Fox View Dental handles the full case in-house.</p>
+        <span class="svc-tag">Restorative</span>
+      </div>
+
+      <div class="svc-card reveal reveal-delay-3">
+        <div class="svc-icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Sedation Dentistry</h3>
+        <p>Anxiety-free care for patients who have put off treatment for years. Whether you need a simple cleaning or a full-mouth restoration, sedation lets you complete your care comfortably and on your timeline.</p>
+        <span class="svc-tag">Comfort Care</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     DOCTOR BIO
+     ============================================= -->
+<section class="block alt" id="doctor" aria-labelledby="bio-heading">
+  <div class="container">
+    <div class="bio-grid">
+
+      <div class="bio-photo-wrap reveal">
+        <div class="bio-photo">
+          <img
+            src="https://foxviewdental.com/wp-content/uploads/2024/02/Image20240221104204-2-copy-scaled.jpg"
+            alt="Dr. Chad Yenchesky DDS, owner and dentist at Fox View Dental in De Pere, Wisconsin"
+            loading="lazy"
+            width="400"
+            height="500"
+            style="object-position: center top;"
+          >
+          <div class="bio-photo-overlay">
+            <div class="bio-photo-name">Dr. Chad Yenchesky</div>
+            <div class="bio-photo-title">DDS &nbsp;&middot;&nbsp; Owner</div>
+          </div>
+          <div class="bio-badge" aria-label="Doctor of Dental Surgery">DDS<br>Owner</div>
+        </div>
+      </div>
+
+      <div class="bio-body reveal reveal-delay-2">
+        <span class="eyebrow">Meet the Doctor</span>
+        <h2 class="display" id="bio-heading">The dentist other dentists learn from.</h2>
+        <p>Dr. Yenchesky has spent 17 years on the faculty of The Clinical Mastery Series, one of the country's most respected post-graduate dental programs. He teaches Ultimate Occlusion, Anterior Aesthetics, and the Art of Photography to practicing dentists across the country. When he sees you, that same standard of care is what you receive.</p>
+        <p>He earned his DDS from the University of Minnesota in 2002, following a competitive international residency at Aarhus University in Denmark in 2001. From 2010 to 2013 he served as adjunct faculty at the Arizona School of Dentistry and Oral Health. He completes roughly 100 continuing education hours per year, approximately six times the Wisconsin biennial minimum.</p>
+        <p>Outside the chair, Dr. Yenchesky is known for a down-to-earth demeanor that puts patients at ease, a relentless pursuit of craft, and a family that keeps him rooted in the De Pere community.</p>
+
+        <ul class="cred-list" aria-label="Credentials and milestones">
+          <li class="cred-item">
+            <span class="cred-bullet" aria-hidden="true"></span>
+            <span class="cred-item-text"><strong>2001</strong> International residency, Aarhus University, Denmark</span>
+          </li>
+          <li class="cred-item">
+            <span class="cred-bullet" aria-hidden="true"></span>
+            <span class="cred-item-text"><strong>2002</strong> DDS, University of Minnesota School of Dentistry</span>
+          </li>
+          <li class="cred-item">
+            <span class="cred-bullet" aria-hidden="true"></span>
+            <span class="cred-item-text"><strong>Since 2009</strong> Faculty, The Clinical Mastery Series. Teaches Ultimate Occlusion, Anterior Aesthetics, and Art of Photography.</span>
+          </li>
+          <li class="cred-item">
+            <span class="cred-bullet" aria-hidden="true"></span>
+            <span class="cred-item-text"><strong>2010</strong> Acquires Fox View Dental. Sole owner to present.</span>
+          </li>
+          <li class="cred-item">
+            <span class="cred-bullet" aria-hidden="true"></span>
+            <span class="cred-item-text"><strong>2010-2013</strong> Adjunct faculty, Arizona School of Dentistry and Oral Health</span>
+          </li>
+          <li class="cred-item">
+            <span class="cred-bullet" aria-hidden="true"></span>
+            <span class="cred-item-text"><strong>Ongoing</strong> AAFE-trained Botox and dermal filler. Digital Smile Design. 100 CE hrs/yr.</span>
+          </li>
+        </ul>
+
+        <div class="gh-badge" aria-label="Good Housekeeping press recognition">
+          <div class="gh-badge-icon" aria-hidden="true">GH</div>
+          <div class="gh-badge-text">
+            <strong>Featured in Good Housekeeping</strong>
+            National press recognition for Dr. Yenchesky's expertise and patient care approach.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SMILE GALLERY
+     ============================================= -->
+<section class="block" id="gallery" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="gallery-intro reveal">
+      <span class="eyebrow">Patient Results</span>
+      <h2 class="display" id="gallery-heading">Real smiles. Real transformations.</h2>
+      <p>Every case is planned with the same precision Dr. Yenchesky brings to the national stage. Results that speak louder than a resume.</p>
+    </div>
+    <div class="gallery-grid">
+
+      <div class="gallery-card reveal reveal-delay-1">
+        <div class="gallery-visual" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="28" stroke="#c9978e" stroke-width="1.5"/>
+            <path d="M20 36 Q32 46 44 36" stroke="#c9978e" stroke-width="2" stroke-linecap="round" fill="none"/>
+            <circle cx="22" cy="27" r="3" fill="#c9978e" opacity="0.5"/>
+            <circle cx="42" cy="27" r="3" fill="#c9978e" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">Porcelain Veneers</div>
+          <p class="gallery-desc">Full anterior arch transformation. 8 upper veneers placed following a Digital Smile Design plan. Teeth whitening coordinated for a balanced result.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-2">
+        <div class="gallery-visual" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <rect x="12" y="20" width="40" height="24" rx="6" stroke="#b8965a" stroke-width="1.5"/>
+            <line x1="22" y1="20" x2="22" y2="44" stroke="#b8965a" stroke-width="1" opacity="0.5"/>
+            <line x1="32" y1="20" x2="32" y2="44" stroke="#b8965a" stroke-width="1" opacity="0.5"/>
+            <line x1="42" y1="20" x2="42" y2="44" stroke="#b8965a" stroke-width="1" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">Full Mouth Rehabilitation</div>
+          <p class="gallery-desc">Porcelain crowns following Invisalign orthodontic treatment. Six months restoration, two years total treatment. Chronic fractures resolved, bite corrected.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-3">
+        <div class="gallery-visual" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <path d="M16 44 Q32 28 48 44" stroke="#c9978e" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+            <circle cx="32" cy="22" r="10" stroke="#c9978e" stroke-width="1.5"/>
+            <path d="M27 22 Q32 28 37 22" stroke="#c9978e" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">Invisalign + Cosmetic</div>
+          <p class="gallery-desc">Clear aligner orthodontics followed by cosmetic bonding and professional whitening. Staggered plan designed from day one so the final result is cohesive.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-1">
+        <div class="gallery-visual" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="14" stroke="#b8965a" stroke-width="1.5"/>
+            <circle cx="32" cy="32" r="6" fill="#b8965a" opacity="0.25"/>
+            <line x1="32" y1="8" x2="32" y2="18" stroke="#b8965a" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="32" y1="46" x2="32" y2="56" stroke="#b8965a" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">Dental Implant</div>
+          <p class="gallery-desc">Single-tooth implant replacing a missing lateral incisor. Implant, abutment, and crown placed in-house. Color-matched to adjacent natural teeth.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-2">
+        <div class="gallery-visual" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <path d="M20 32 Q32 20 44 32 Q32 44 20 32z" stroke="#c9978e" stroke-width="1.5" fill="none"/>
+            <circle cx="32" cy="32" r="4" fill="#c9978e" opacity="0.4"/>
+          </svg>
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">TMJ Rehabilitation</div>
+          <p class="gallery-desc">Full mouth rehabilitation with orthopedic splint therapy and porcelain crowns for a patient with chronic jaw pain and headaches. Pain-free outcome at six months.</p>
+        </div>
+      </div>
+
+      <div class="gallery-card reveal reveal-delay-3">
+        <div class="gallery-visual" aria-hidden="true">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+            <rect x="18" y="16" width="28" height="32" rx="8" stroke="#b8965a" stroke-width="1.5"/>
+            <path d="M24 30 Q32 38 40 30" stroke="#b8965a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="gallery-label">
+          <div class="gallery-treatment">Sedation + Full Arch</div>
+          <p class="gallery-desc">Full arch restoration under sedation for a patient who had postponed dental care due to anxiety. Upper arch completed in three months. Lower arch in progress.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     SOCIAL PROOF
+     ============================================= -->
+<section class="block alt" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container">
+    <div class="section-intro reveal">
+      <span class="eyebrow">Patient Stories</span>
+      <h2 class="display" id="reviews-heading">Straight from the mouths we love.</h2>
+    </div>
+    <div class="proof-grid">
+
+      <div class="proof-card reveal reveal-delay-1">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">I had chronic jaw pain and headaches for years. After six months of treatment with Dr. Chad, I am completely pain free. I no longer need regular chiropractic care. I wish I had come in sooner.</p>
+        <div class="proof-author">
+          <div class="proof-avatar" aria-hidden="true">T</div>
+          <div>
+            <div class="proof-name">Tammy</div>
+            <div class="proof-meta">Full Mouth Rehabilitation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card reveal reveal-delay-2">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">My teeth were misaligned for as long as I can remember. Three months of restoration with porcelain crowns and the difference is incredible. I smile differently now, and I mean that literally.</p>
+        <div class="proof-author">
+          <div class="proof-avatar" aria-hidden="true">D</div>
+          <div>
+            <div class="proof-name">Darcey</div>
+            <div class="proof-meta">Full Mouth Restoration</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card reveal reveal-delay-3">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">I have wanted this smile my entire life. After Invisalign and full mouth rehabilitation with Dr. Chad, I finally have the confidence I never had growing up. It took two years, but it was worth every visit.</p>
+        <div class="proof-author">
+          <div class="proof-avatar" aria-hidden="true">M</div>
+          <div>
+            <div class="proof-name">Mark</div>
+            <div class="proof-meta">Invisalign + Full Rehabilitation</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card reveal reveal-delay-1">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">Dental anxiety kept me out of the chair for years. The sedation option at Fox View changed everything. I got my upper arch done in six months and I am already scheduled to finish the lower. I feel like a different person.</p>
+        <div class="proof-author">
+          <div class="proof-avatar" aria-hidden="true">K</div>
+          <div>
+            <div class="proof-name">Kristee</div>
+            <div class="proof-meta">Sedation Full Arch Restoration</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card reveal reveal-delay-2">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">Brenda has been my hygienist for over 20 years. Dr. Chad took over the practice and kept the same culture of care. The whole team feels like family. You notice when a dentist actually loves their work.</p>
+        <div class="proof-author">
+          <div class="proof-avatar" aria-hidden="true">G</div>
+          <div>
+            <div class="proof-name">Ginny</div>
+            <div class="proof-meta">Ongoing Preventive + Restorative Care</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="proof-card reveal reveal-delay-3">
+        <span class="stars" aria-label="Five stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        <span class="proof-quote-mark" aria-hidden="true">"</span>
+        <p class="proof-text">I was nervous about implants. Dr. Chad walked me through every step, showed me the Digital Smile Design plan before we started, and the result looks completely natural. My family did not believe it was an implant until I showed them the before photos.</p>
+        <div class="proof-author">
+          <div class="proof-avatar" aria-hidden="true">R</div>
+          <div>
+            <div class="proof-name">Rebecca</div>
+            <div class="proof-meta">Single Tooth Implant</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CONTACT + HOURS
+     ============================================= -->
+<section class="block" id="contact" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info reveal">
+        <span class="eyebrow">Get in Touch</span>
+        <h2 class="display" id="contact-heading">We would love to meet you.</h2>
+        <p class="lede">Whether you are looking for a new dental home or ready to start your smile transformation, the first step is a conversation.</p>
+
+        <div class="contact-block">
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Address</strong>
+              2310 Oak Ridge Circle<br>De Pere, WI 54115
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 9.73a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 2.91h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17h1z"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Phone</strong>
+              <a href="tel:9203364201" style="color: var(--navy); font-weight: 500;">(920) 336-4201</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="contact-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-detail">
+              <strong>Social</strong>
+              <a href="https://www.instagram.com/foxviewdental" rel="nofollow" style="color: var(--navy); font-weight: 500;">@foxviewdental</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="cta-block">
+          <p>Ready to start? Request your appointment online and we will reach out to confirm within one business day.</p>
+          <a href="https://andrei170.github.io/ag1/#services" class="btn-primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Request an Appointment
+          </a>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="hours-table" aria-label="Office hours">
+          <div class="hours-head">Office Hours</div>
+          <div class="hours-row">
+            <span class="hours-day">Monday</span>
+            <span class="hours-time">7:30 AM - 4:30 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Tuesday</span>
+            <span class="hours-time">7:30 AM - 4:30 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Wednesday</span>
+            <span class="hours-time">7:30 AM - 4:30 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Thursday</span>
+            <span class="hours-time">7:30 AM - 4:30 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Friday</span>
+            <span class="hours-time closed">Closed</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time closed">Closed</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Sunday</span>
+            <span class="hours-time closed">Closed</span>
+          </div>
+        </div>
+
+        <div style="margin-top: 28px; background: var(--ivory-warm); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 28px;">
+          <span class="eyebrow" style="margin-bottom: 10px;">The Team Behind the Smile</span>
+          <p style="font-size: 14.5px; color: var(--ink-mid); line-height: 1.65;">Fox View Dental's team members average over 20 years at the practice. Char, Brenda, Lisa, Rachel, Lorie, and Chloe bring a depth of care and continuity that most offices simply cannot match. When you come in, you are not starting over.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     BOOKING STRIP
+     ============================================= -->
+<section class="booking-strip" aria-labelledby="booking-heading">
+  <div class="container">
+    <div class="booking-inner">
+      <span class="eyebrow" style="color: var(--rose-light);">Take the First Step</span>
+      <h2 class="display" id="booking-heading">Your smile is waiting for you.</h2>
+      <p>De Pere's only dentist with 17 years on national faculty is taking new patients. The first conversation is on us.</p>
+      <div class="booking-actions">
+        <a href="https://andrei170.github.io/ag1/#services" class="btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book an Appointment
+        </a>
+        <a href="tel:9203364201" class="btn-outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 9.73a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 2.91h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 17h1z"/></svg>
+          (920) 336-4201
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+     ============================================= -->
+<footer class="site" aria-label="Site footer">
+  <div class="container">
+    <div class="foot-inner">
+      <div>
+        <div class="foot-brand">
+          <img
+            src="https://foxviewdental.com/wp-content/uploads/2017/12/logo-1024x358.png"
+            alt="Fox View Dental logo"
+            class="foot-logo"
+            width="100"
+            height="35"
+            loading="lazy"
+          >
+          <span class="foot-brand-name">Fox View Dental</span>
+        </div>
+        <p class="foot-desc">Cosmetic and restorative dentistry in De Pere, WI, led by Dr. Chad Yenchesky DDS. Faculty-level craft. Small-practice care.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#services">Digital Smile Design</a></li>
+          <li><a href="#services">Porcelain Veneers</a></li>
+          <li><a href="#services">Botox &amp; Filler</a></li>
+          <li><a href="#services">Invisalign</a></li>
+          <li><a href="#services">Dental Implants</a></li>
+          <li><a href="#services">Sedation Dentistry</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Practice</h4>
+        <ul>
+          <li><a href="#doctor">Meet Dr. Yenchesky</a></li>
+          <li><a href="#gallery">Smile Gallery</a></li>
+          <li><a href="#reviews">Patient Stories</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Contact</h4>
+        <p>2310 Oak Ridge Circle<br>De Pere, WI 54115<br><br><a href="tel:9203364201">(920) 336-4201</a><br><br><a href="https://www.instagram.com/foxviewdental" rel="nofollow">Instagram</a>&nbsp;&nbsp;<a href="https://www.facebook.com/FoxViewDental" rel="nofollow">Facebook</a></p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span class="foot-demo">Demo site prepared by <a href="https://andrei170.github.io/ag1/#services" target="_blank" rel="noopener">AG Consulting</a></span>
+      <span style="color: rgba(253,250,246,0.35); font-size: 12px;">Fox View Dental is licensed by the Wisconsin Dentistry Examining Board. All credentials referenced are based on publicly available sources. This is a demonstration website only.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- =============================================
+     JAVASCRIPT: Scroll reveal + sticky header
+     ============================================= -->
+<script>
+(function () {
+  'use strict';
+
+  // Sticky header condensing
+  var header = document.getElementById('site-header');
+  function onScroll() {
+    if (window.scrollY > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Scroll reveal (only if user has no reduced-motion preference)
+  var mq = window.matchMedia('(prefers-reduced-motion: no-preference)');
+  if (mq.matches) {
+    var revealEls = document.querySelectorAll('.reveal');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+    revealEls.forEach(function (el) { observer.observe(el); });
+  } else {
+    // No-motion: make everything visible immediately
+    document.querySelectorAll('.reveal').forEach(function (el) {
+      el.classList.add('revealed');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
