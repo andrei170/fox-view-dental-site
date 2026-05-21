@@ -493,7 +493,7 @@ nav a:hover { color: var(--gold) !important; }
   .gallery-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 }
 .gallery-visual {
-  height: 180px;
+  height: 220px;
   background: linear-gradient(145deg, var(--rose-pale), var(--ivory-deep));
   display: flex;
   align-items: center;
@@ -501,7 +501,55 @@ nav a:hover { color: var(--gold) !important; }
   position: relative;
   overflow: hidden;
 }
+.gallery-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
 .gallery-visual svg { opacity: 0.4; }
+.gallery-ba {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  background: var(--ivory-deep);
+}
+.gallery-ba-col {
+  position: relative;
+  overflow: hidden;
+}
+.gallery-ba-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.gallery-ba-tag {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(20,35,63,0.78);
+  color: var(--ivory);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+.gallery-ba-divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255,255,255,0.65);
+  z-index: 2;
+  transform: translateX(-50%);
+}
 .gallery-label {
   padding: 20px 22px;
 }
@@ -513,6 +561,46 @@ nav a:hover { color: var(--gold) !important; }
   margin-bottom: 6px;
 }
 .gallery-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+
+/* =============================================
+   OFFICE PHOTO BAND
+   ============================================= */
+.office-band {
+  padding: 0;
+  overflow: hidden;
+  background: var(--navy);
+}
+.office-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  height: 280px;
+}
+.office-strip-item {
+  position: relative;
+  overflow: hidden;
+}
+.office-strip-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.4,0,0.2,1);
+}
+.office-strip-item:hover img { transform: scale(1.04); }
+.office-strip-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(20,35,63,0.82) 0%, transparent 100%);
+  color: rgba(253,250,246,0.9);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 18px 14px 12px;
+}
+@media (max-width: 780px) {
+  .office-strip { grid-template-columns: repeat(2, 1fr); height: 340px; }
+}
 
 /* =============================================
    SOCIAL PROOF
@@ -1053,6 +1141,46 @@ footer.site {
 </section>
 
 <!-- =============================================
+     OFFICE PHOTO BAND
+     ============================================= -->
+<div class="office-band" aria-label="Fox View Dental office photos">
+  <div class="office-strip">
+    <div class="office-strip-item">
+      <img
+        src="https://foxviewdental.com/wp-content/uploads/2023/07/Waiting-Room.jpg"
+        alt="Fox View Dental waiting room in De Pere, WI"
+        loading="lazy"
+      >
+      <div class="office-strip-caption">Waiting Room</div>
+    </div>
+    <div class="office-strip-item">
+      <img
+        src="https://foxviewdental.com/wp-content/uploads/2023/07/Operatory-Chair.jpg"
+        alt="Treatment chair at Fox View Dental"
+        loading="lazy"
+      >
+      <div class="office-strip-caption">Treatment Suite</div>
+    </div>
+    <div class="office-strip-item">
+      <img
+        src="https://foxviewdental.com/wp-content/uploads/2023/07/Consultation-with-Dr-Chad.jpg"
+        alt="Dr. Chad Yenchesky consulting with a patient at Fox View Dental"
+        loading="lazy"
+      >
+      <div class="office-strip-caption">Consultation</div>
+    </div>
+    <div class="office-strip-item">
+      <img
+        src="https://foxviewdental.com/wp-content/uploads/2023/07/Outside-Office.jpg"
+        alt="Outside view of Fox View Dental office in De Pere, WI"
+        loading="lazy"
+      >
+      <div class="office-strip-caption">De Pere, WI</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
      SMILE GALLERY
      ============================================= -->
 <section class="block" id="gallery" aria-labelledby="gallery-heading">
@@ -1065,13 +1193,24 @@ footer.site {
     <div class="gallery-grid">
 
       <div class="gallery-card reveal reveal-delay-1">
-        <div class="gallery-visual" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <circle cx="32" cy="32" r="28" stroke="#c9978e" stroke-width="1.5"/>
-            <path d="M20 36 Q32 46 44 36" stroke="#c9978e" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <circle cx="22" cy="27" r="3" fill="#c9978e" opacity="0.5"/>
-            <circle cx="42" cy="27" r="3" fill="#c9978e" opacity="0.5"/>
-          </svg>
+        <div class="gallery-ba">
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/08/medium_Before-Veneers_201792662237_932.jpg"
+              alt="Before porcelain veneers treatment at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">Before</span>
+          </div>
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/08/medium_After-Veneers_2017710125041_856.jpg"
+              alt="After porcelain veneers treatment at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">After</span>
+          </div>
+          <div class="gallery-ba-divider" aria-hidden="true"></div>
         </div>
         <div class="gallery-label">
           <div class="gallery-treatment">Porcelain Veneers</div>
@@ -1080,13 +1219,24 @@ footer.site {
       </div>
 
       <div class="gallery-card reveal reveal-delay-2">
-        <div class="gallery-visual" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <rect x="12" y="20" width="40" height="24" rx="6" stroke="#b8965a" stroke-width="1.5"/>
-            <line x1="22" y1="20" x2="22" y2="44" stroke="#b8965a" stroke-width="1" opacity="0.5"/>
-            <line x1="32" y1="20" x2="32" y2="44" stroke="#b8965a" stroke-width="1" opacity="0.5"/>
-            <line x1="42" y1="20" x2="42" y2="44" stroke="#b8965a" stroke-width="1" opacity="0.5"/>
-          </svg>
+        <div class="gallery-ba">
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_Before-Full-Mouth-Rehabilitation.jpg"
+              alt="Before full mouth rehabilitation at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">Before</span>
+          </div>
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_After-Full-Mouth-Rehabilitation.jpg"
+              alt="After full mouth rehabilitation at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">After</span>
+          </div>
+          <div class="gallery-ba-divider" aria-hidden="true"></div>
         </div>
         <div class="gallery-label">
           <div class="gallery-treatment">Full Mouth Rehabilitation</div>
@@ -1095,12 +1245,24 @@ footer.site {
       </div>
 
       <div class="gallery-card reveal reveal-delay-3">
-        <div class="gallery-visual" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <path d="M16 44 Q32 28 48 44" stroke="#c9978e" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-            <circle cx="32" cy="22" r="10" stroke="#c9978e" stroke-width="1.5"/>
-            <path d="M27 22 Q32 28 37 22" stroke="#c9978e" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
+        <div class="gallery-ba">
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_Before-Cosmetic-Dentistry_201981515553_938.jpg"
+              alt="Before cosmetic dentistry treatment at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">Before</span>
+          </div>
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_After-Full-Mouth-Rehabilitation_201712414957_343.jpg"
+              alt="After cosmetic dentistry treatment at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">After</span>
+          </div>
+          <div class="gallery-ba-divider" aria-hidden="true"></div>
         </div>
         <div class="gallery-label">
           <div class="gallery-treatment">Invisalign + Cosmetic</div>
@@ -1109,13 +1271,24 @@ footer.site {
       </div>
 
       <div class="gallery-card reveal reveal-delay-1">
-        <div class="gallery-visual" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <circle cx="32" cy="32" r="14" stroke="#b8965a" stroke-width="1.5"/>
-            <circle cx="32" cy="32" r="6" fill="#b8965a" opacity="0.25"/>
-            <line x1="32" y1="8" x2="32" y2="18" stroke="#b8965a" stroke-width="1.5" stroke-linecap="round"/>
-            <line x1="32" y1="46" x2="32" y2="56" stroke="#b8965a" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+        <div class="gallery-ba">
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_Before-Implant-Dentistry_2017710122538_58.jpg"
+              alt="Before dental implant at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">Before</span>
+          </div>
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/07/medium_After-Implant-Dentistry_2017710122539_407.jpg"
+              alt="After dental implant at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">After</span>
+          </div>
+          <div class="gallery-ba-divider" aria-hidden="true"></div>
         </div>
         <div class="gallery-label">
           <div class="gallery-treatment">Dental Implant</div>
@@ -1124,11 +1297,24 @@ footer.site {
       </div>
 
       <div class="gallery-card reveal reveal-delay-2">
-        <div class="gallery-visual" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <path d="M20 32 Q32 20 44 32 Q32 44 20 32z" stroke="#c9978e" stroke-width="1.5" fill="none"/>
-            <circle cx="32" cy="32" r="4" fill="#c9978e" opacity="0.4"/>
-          </svg>
+        <div class="gallery-ba">
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/08/medium_Before-Smile-Design_201712414170_322.jpg"
+              alt="Before smile design at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">Before</span>
+          </div>
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/08/medium_After-Smile-Design_201712414170_408.jpg"
+              alt="After smile design at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">After</span>
+          </div>
+          <div class="gallery-ba-divider" aria-hidden="true"></div>
         </div>
         <div class="gallery-label">
           <div class="gallery-treatment">TMJ Rehabilitation</div>
@@ -1137,11 +1323,24 @@ footer.site {
       </div>
 
       <div class="gallery-card reveal reveal-delay-3">
-        <div class="gallery-visual" aria-hidden="true">
-          <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-            <rect x="18" y="16" width="28" height="32" rx="8" stroke="#b8965a" stroke-width="1.5"/>
-            <path d="M24 30 Q32 38 40 30" stroke="#b8965a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-          </svg>
+        <div class="gallery-ba">
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/08/medium_Before-Veneers_2017710125039_996.jpg"
+              alt="Before veneers treatment at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">Before</span>
+          </div>
+          <div class="gallery-ba-col">
+            <img
+              src="https://foxviewdental.com/wp-content/uploads/2023/08/medium_After_201981685046_846.jpg"
+              alt="After veneers treatment at Fox View Dental"
+              loading="lazy"
+            >
+            <span class="gallery-ba-tag">After</span>
+          </div>
+          <div class="gallery-ba-divider" aria-hidden="true"></div>
         </div>
         <div class="gallery-label">
           <div class="gallery-treatment">Sedation + Full Arch</div>
@@ -1332,7 +1531,33 @@ footer.site {
 
         <div style="margin-top: 28px; background: var(--ivory-warm); border: 1px solid var(--line); border-radius: var(--radius-md); padding: 28px;">
           <span class="eyebrow" style="margin-bottom: 10px;">The Team Behind the Smile</span>
-          <p style="font-size: 14.5px; color: var(--ink-mid); line-height: 1.65;">Fox View Dental's team members average over 20 years at the practice. Char, Brenda, Lisa, Rachel, Lorie, and Chloe bring a depth of care and continuity that most offices simply cannot match. When you come in, you are not starting over.</p>
+          <p style="font-size: 14.5px; color: var(--ink-mid); line-height: 1.65; margin-bottom: 18px;">Fox View Dental's team members average over 20 years at the practice. Char, Brenda, Lisa, Rachel, Lorie, and Chloe bring a depth of care and continuity that most offices simply cannot match. When you come in, you are not starting over.</p>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+            <div style="border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: var(--ivory-deep);">
+              <img
+                src="https://foxviewdental.com/wp-content/uploads/2023/07/fox-view-dental-team.jpg"
+                alt="Fox View Dental team"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              >
+            </div>
+            <div style="border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: var(--ivory-deep);">
+              <img
+                src="https://foxviewdental.com/wp-content/uploads/2023/07/Brenda-with-a-Patient.jpg"
+                alt="Brenda, hygienist at Fox View Dental, with a patient"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block;"
+              >
+            </div>
+            <div style="border-radius: 10px; overflow: hidden; aspect-ratio: 1; background: var(--ivory-deep);">
+              <img
+                src="https://foxviewdental.com/wp-content/uploads/2023/07/Patient-Comfort.jpg"
+                alt="Patient comfort at Fox View Dental"
+                loading="lazy"
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              >
+            </div>
+          </div>
         </div>
       </div>
 
